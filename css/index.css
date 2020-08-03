@@ -1,56 +1,55 @@
-li{
-    list-style: none;
+*{
+    margin: 0;
+    padding: 0;}
+.clearfix::after{
+    content:"";
+    display: block;
+    clear: both;
 }
 a{
     text-decoration: none;
 }
-.clearfix::after{
-    content: '';
-    display: block;
-    clear: both;
+li{
+    list-style: none;
 }
-*{
-margin: 0;
-padding: 0;
-}
+
 header{
-    padding: 20px;
+    position: relative;
+}
+.nav-bar{
+    margin: 10px;
+    position: fixed;
+    top:0;
     display: flex;
     justify-content: center;
-    background:  linear-gradient(to right top, rgba(38,50,105,0.78), rgba(44,51,64,0.8)),url('https://rscard.px-lab.com/startuper/wp-content/uploads/sites/2/2016/02/rs-cover-2-2-1-1.jpg');
-    background-size: cover ;
-    height: 515px;
-}
-.head-log{
-    width:258px;
-    
+    width: 100%;
 }
 .logo{
-    font-family: "Fredoka One";
-    max-height: 50px;
-    color: #9a9da2 !important;
-    line-height: 50px;
-    font-size: 30px;
-    font-weight: 400;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
 }
-.logo span{
-    text-transform: uppercase;
-    margin-right: 3px;
-    color: #e8676b;
+nav{
+    width: 60%;
 }
-.head-nav{
-    width: 1260px;
-}
-.head-nav ul{
+nav ul{
     display: flex;
+    padding: 5px;
     justify-content: flex-end;
+    width: 100%;
 }
-.head-nav ul li{
+nav ul li{
     font-size: 13px;
     font-weight: 700;
     line-height: 1;
     text-transform: uppercase;
     display: block;
     padding: 12px;
+}
+nav ul li a{
     color:rgba(255,255,255,0.7)
+}
+.head-bg{
+    background:  linear-gradient(to right top, rgba(38,50,105,0.78), rgba(44,51,64,0.8)),url('https://rscard.px-lab.com/startuper/wp-content/uploads/sites/2/2016/02/rs-cover-2-2-1-1.jpg');
+    height: 550px;
 }
