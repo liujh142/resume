@@ -1,0 +1,41 @@
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+body{
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+}
+header{
+    position: relative;
+}
+li{
+    list-style: none;
+    color: #ddd;
+}
+.head-bg{
+    height: 512px;
+    background-image: url('https://rscard.px-lab.com/startuper/wp-content/uploads/sites/2/2016/02/rs-cover-2-2-1-1.jpg')
+}
+.head-bar{
+    position: absolute;
+    top: 10px;
+}
+.head-nav{
+    width: 1000px;
+    position: absolute;
+    top: 0px;;
+    left: 800px;
+}
+.head-nav ul li{
+    float: left;
+    margin: 10px;
+}
+
+.head-bar-inner .col-lg{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
