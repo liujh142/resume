@@ -23,11 +23,20 @@ header{
     display: flex;
     justify-content: center;
     width: 100%;
+    padding: 20px;
+    transition: 0.3s;
 }
 .logo{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+    padding: 5px;
+    font-size: 30px;
+}
+.logo span{
+    color: #e8676b;
+    margin-right: 10px;
+}
+.logo{
+    color: rgba(255,255,255,0.7);
+    font-weight: 800;
 }
 nav{
     width: 60%;
@@ -45,6 +54,25 @@ nav ul li{
     text-transform: uppercase;
     display: block;
     padding: 12px;
+}
+.nav-active::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    border-bottom: #e8676b solid ;
+    margin-top: 5px;
+    border-radius: 10%;
+}
+nav ul li:hover::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    border-bottom: #e8676b solid ;
+    margin-top: 5px;
+    border-radius: 10%;
+    transition: 1s;
 }
 nav ul li a{
     color:rgba(255,255,255,0.7)
@@ -73,10 +101,12 @@ nav ul li a{
     background-color:rgba(44, 51, 64, 0.8) ;
 }
 main{
-    width: 930px;
+    width: 1200px;
     margin: 100px auto;
 }
 .card{
+    width: 1050px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns:40% 60%;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
@@ -125,21 +155,54 @@ main{
     margin:30px;
 }
 .card footer{
-    padding: 20px;
+    padding: 30px;
     grid-column-start: span 3;
     background-color: #e8676b;
 }
 .social{
     display: grid;
-    grid-template-columns: repeat(4,45px);
+    grid-template-columns: repeat(4,50px);
     justify-content: center;
     text-align: center;
-    grid-column-gap: 40px;
-}
-.social li{
-    margin: 20px 20px;
+    grid-column-gap: 70px;
 }
 .social i{
     color: white !important;
     font-size: 20px;
+}
+.button{
+    display: block;
+    width: 280px;
+    text-align: center;
+    margin: 35px auto;
+    color: rgb(61,68,81);
+    border: rgb(203,205,207) solid 1px;
+    border-radius: 2%;
+    line-height: 60px;
+    font-weight: 700;
+    font-size: 20px;
+}
+.button:hover{
+    box-shadow:5px 5px 5px 5px rgba(192,192,192,0.8);
+    transition: 0.5s;
+}
+.self-introduction{
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    line-height:50px ;
+}
+.nav-bar-bg{
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.19), 0 6px 10px rgba(0, 0, 0, 0.23);
+}
+.nav-bar.nav-bar-bg a{
+    color: black !important;
 }
