@@ -19,7 +19,17 @@ $('.scroll-top').onclick = function(){
     },1)
 }
 $('.menu-button').onclick = function(){
-    $('.sidebar').setAttribute('style','right:0px;display:block');  
+    $('.sidebar').classList.add('sidebar-active');  
     $('.overlay').setAttribute('style','display:block');
     $('html').setAttribute('style','overflow: hidden')
+}
+$('.close-button').onclick = function(){
+    $('.sidebar').classList.remove('sidebar-active');
+    $('.overlay').setAttribute('style',"display:none");
+    $('html').setAttribute('style','overflow:visible')
+}
+$('.overlay').onclick = function(){
+    $('.sidebar').classList.remove('sidebar-active');
+    $('.overlay').setAttribute('style',"display:none");
+    $('html').setAttribute('style','overflow:visible')
 }
