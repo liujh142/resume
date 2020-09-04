@@ -1,20 +1,55 @@
 function $(selector){
     return document.querySelector(selector);
 }
-window.addEventListener('scroll',function(){
-    if(document.documentElement.scrollTop > 60){
-        $('.nav-bar').classList.add('nav-bar-bg')
-        $('header').setAttribute('style','min-height:40px')
-    }else{
-        $('.nav-bar').classList.remove('nav-bar-bg')
-        $('header').setAttribute('style','min-height:0px');
+function hiFrequency(fn,delay){
+    var timer = null;
+    return function(){
+        if(timer){
+            clearTimeout(timer);
+        }
+        setTimeout(function(){
+            fn();
+        },delay)
     }
-    if(document.documentElement.scrollTop > 400){
-        $('.menu-items:first-child').classList.remove('nav-active')
-    }else{
-        $('.menu-items:first-child').classList.add('nav-active')
-    }
-})
+}
+
+function scrollLisiner(){
+    window.addEventListener('scroll',function(){
+        var navBar = $('.nav-bar');
+        var header = $('header');
+        var menuItemsFirstChild = $('.menu-items:first-child')
+        switch(document.documentElement.clientHeight != document.documentElement.scrollHeight){ //判断是否出现滚动条，但是这种写法也太丑了 需要优化
+            case document.documentElement.scrollTop > 60 :
+                navBar.classList.add('nav-bar-bg')
+                header.setAttribute('style','min-height:40px')
+            case document.documentElement.scrollTop > 400 :
+                menuItemsFirstChild.classList.remove('nav-active')
+                break;
+            default :
+                navBar.classList.remove('nav-bar-bg');
+                header.setAttribute('style','min-height:0px');
+                menuItemsFirstChild.classList.add('nav-active');
+        }
+    })
+}
+scrollLisiner();
+// hiFrequency(scrollLisiner,10);
+// window.addEventListener('scroll',function(){
+//     if(document.documentElement.scrollTop > 60){
+//         $('.nav-bar').classList.add('nav-bar-bg')
+//         $('header').setAttribute('style','min-height:40px')
+//     }else{
+//         $('.nav-bar').classList.remove('nav-bar-bg')
+//         $('header').setAttribute('style','min-height:0px');
+//     }
+//     if(document.documentElement.scrollTop > 400){
+//         $('.menu-items:first-child').classList.remove('nav-active')
+//     }else{
+//         $('.menu-items:first-child').classList.add('nav-active')
+//     }
+// })
+
+
 // $('.scroll-top').onclick = function(){
 //     var scrollTop = setInterval(function(){
 //         document.documentElement.scrollTop = document.documentElement.scrollTop  -  5;
@@ -30,7 +65,9 @@ function scrollButton(){
     }
     requestAnimationFrame(scrollButton);
 }
+
 $('.scroll-top').onclick = scrollButton;
+
 
 $('.menu-button').onclick = function(){
     $('.sidebar').classList.add('sidebar-active');  
